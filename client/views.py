@@ -1,5 +1,8 @@
-# Create your views here.
 from rest_framework import generics
+from .models import Client
+from .serializers import ClientSerializer
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from .models import Client
 from .serializers import ClientSerializer
 
@@ -14,21 +17,11 @@ class ClientRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ClientSerializer
 
 
-from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
-from .models import Client
-from .serializers import ClientSerializer
-
-
 class ClientCreateAPIView(generics.CreateAPIView):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
     permission_classes = [IsAuthenticated]
 
-
-from rest_framework import generics
-from .models import Client
-from .serializers import ClientSerializer
 
 
 class ClientListAPIView(generics.ListAPIView):
@@ -46,10 +39,6 @@ class ClientUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ClientSerializer
 
 
-from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
-from .models import Client
-from .serializers import ClientSerializer
 
 
 class ClientCreateAPIView(generics.CreateAPIView):
@@ -61,11 +50,6 @@ class ClientCreateAPIView(generics.CreateAPIView):
 class ClientUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
-
-
-from rest_framework import generics
-from .models import Client
-from .serializers import ClientSerializer
 
 
 class ClientUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):

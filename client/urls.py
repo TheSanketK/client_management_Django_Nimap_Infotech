@@ -1,20 +1,10 @@
 from django.urls import path
-from .views import ClientListCreateAPIView, ClientRetrieveUpdateDestroyAPIView
-
-urlpatterns = [
-    path("clients/", ClientListCreateAPIView.as_view(), name="client-list-create"),
-    path(
-        "clients/<int:pk>/",
-        ClientRetrieveUpdateDestroyAPIView.as_view(),
-        name="client-detail",
-    ),
-]
-
 from django.urls import path
 from .views import (
     ClientListCreateAPIView,
     ClientRetrieveUpdateDestroyAPIView,
     ClientCreateAPIView,
+    ClientUpdateDestroyAPIView,
 )
 
 urlpatterns = [
@@ -24,9 +14,7 @@ urlpatterns = [
         ClientRetrieveUpdateDestroyAPIView.as_view(),
         name="client-detail",
     ),
-    path("clients/register/", ClientCreateAPIView.as_view(), name="client-register"),
 ]
-
 
 from django.urls import path
 from .views import ClientListAPIView, ClientRetrieveAPIView
@@ -45,12 +33,6 @@ urlpatterns = [
     ),
 ]
 
-from django.urls import path
-from .views import (
-    ClientListCreateAPIView,
-    ClientRetrieveUpdateDestroyAPIView,
-    ClientCreateAPIView,
-)
 
 urlpatterns = [
     path("clients/", ClientListCreateAPIView.as_view(), name="client-list-create"),
@@ -78,13 +60,6 @@ urlpatterns = [
     ),
 ]
 
-from django.urls import path
-from .views import (
-    ClientListCreateAPIView,
-    ClientRetrieveUpdateDestroyAPIView,
-    ClientCreateAPIView,
-    ClientUpdateDestroyAPIView,
-)
 
 urlpatterns = [
     path("clients/", ClientListCreateAPIView.as_view(), name="client-list-create"),
